@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>UI Example</title>
+<title>Image Info UI</title>
 
 <style>
 body {
@@ -10,14 +10,18 @@ body {
     display: flex;
     justify-content: center;
     padding: 40px;
+    background-color: #f5f5f5;
 }
 
 /* 外框 */
 .container {
-    width: 500px;
+    width: 520px;
+    background: #ffffff;
+    padding: 15px;
+    border: 1px solid #ddd;
 }
 
-/* 圖片區塊（關鍵：relative） */
+/* 圖片區塊 */
 .image-box {
     position: relative;
 }
@@ -28,7 +32,7 @@ body {
     display: block;
 }
 
-/* 按鈕（右上角） */
+/* 右上角按鈕 */
 .btn {
     position: absolute;
     top: 10px;
@@ -41,6 +45,7 @@ body {
     background-color: #ffffff;
 
     font-size: 13px;
+    color: #2f2f2f;
     cursor: pointer;
 }
 
@@ -48,7 +53,7 @@ body {
     background-color: #f0f0f0;
 }
 
-/* 詳細資訊 */
+/* 詳細資訊（可滾動） */
 .details {
     margin-top: 10px;
     display: none;
@@ -56,6 +61,9 @@ body {
     color: #707070;
     border-top: 1px solid #ccc;
     padding-top: 10px;
+
+    max-height: 120px;      /* ⭐重點：限制高度 */
+    overflow-y: auto;       /* ⭐重點：出現滾動條 */
 }
 </style>
 </head>
@@ -64,18 +72,27 @@ body {
 
 <div class="container">
 
+    <!-- 圖片 + 按鈕 -->
     <div class="image-box">
-        <img src="https://picsum.photos/500/300">
+        <img src="https://picsum.photos/500/300" alt="image">
 
         <button class="btn" onclick="toggleDetails()">
             查看資訊
         </button>
     </div>
 
+    <!-- 詳細資訊 -->
     <div id="details" class="details">
         <p>日期：2017/10/12</p>
-        <p>檔名：image.jpg</p>
-        <p>大小：400KB</p>
+        <p>檔名：20171012_1.jpg</p>
+        <p>大小：400.57KB</p>
+        <p>路徑：/user/project/images/sample.jpg</p>
+        <p>作者：admin</p>
+        <p>描述：這是一張測試圖片</p>
+        <p>更多資訊1</p>
+        <p>更多資訊2</p>
+        <p>更多資訊3</p>
+        <p>更多資訊4</p>
     </div>
 
 </div>
