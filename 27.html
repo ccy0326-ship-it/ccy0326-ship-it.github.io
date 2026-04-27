@@ -1,99 +1,179 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 
-<!-- ⭐ 這行是關鍵 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Responsive Layout</title>
+<title>Exercise 27</title>
 
 <style>
-body {
-  margin: 0;
-  background: #4aa3d8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+
+body{
+
+    margin:0;
+
+    padding:30px;
+
+    background:#f5f5f5;
+
 }
 
-.container {
-  background: white;
-  padding: 15px;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 12px;
+.wrapper{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:#4da6e8;
+
+    padding:20px;
+
+    box-sizing:border-box;
+
 }
 
-.header {
-  background: #a8cf45;
-  height: 80px;
-  margin-bottom: 10px;
+.phone{
+
+    background:white;
+
+    border-radius:10px;
+
+    padding:10px;
+
 }
 
-.middle {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+/* 綠色區 */
+
+.top{
+
+    height:90px;
+
+    background:#a9cf3c;
+
+    margin-bottom:8px;
+
 }
 
-.box {
-  background: #1bb3b3;
-  height: 80px;
-  flex: 1;
+/* 藍色區 */
+
+.middle{
+
+    display:grid;
+
+    gap:8px;
+
+    margin-bottom:8px;
+
 }
 
-.footer {
-  display: flex;
-  gap: 10px;
+/* 灰色區 */
+
+.bottom{
+
+    display:grid;
+
+    gap:8px;
+
 }
 
-.small {
-  background: #ccc;
-  height: 50px;
-  flex: 1;
+/* 小於480px：左圖 */
+
+.middle{
+
+    grid-template-columns:1fr;
+
 }
 
-/* 小於480px */
-@media (max-width: 480px) {
+.middle div{
 
-  .middle {
-    flex-direction: column;
-  }
+    height:55px;
 
-  .footer {
-    flex-wrap: wrap;
-  }
+    background:#16bccb;
 
-  .small {
-    width: calc(50% - 5px);
-  }
 }
+
+.bottom{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.bottom div{
+
+    height:45px;
+
+    background:#dce4e8;
+
+}
+
+/* 大於等於480px：右圖 */
+
+@media screen and (min-width:480px){
+
+.middle{
+
+    grid-template-columns:1fr 1fr 1fr;
+
+}
+
+.middle div{
+
+    height:120px;
+
+}
+
+.bottom{
+
+    grid-template-columns:1fr 1fr 1fr 1fr;
+
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="wrapper">
 
-  <div class="header"></div>
+<div class="phone">
 
-  <div class="middle">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-  </div>
+<div class="top"></div>
 
-  <div class="footer">
-    <div class="small"></div>
-    <div class="small"></div>
-    <div class="small"></div>
-    <div class="small"></div>
-  </div>
+<div class="middle">
+
+<div></div>
+
+<div></div>
+
+<div></div>
+
+</div>
+
+<div class="bottom">
+
+<div></div>
+
+<div></div>
+
+<div></div>
+
+<div></div>
+
+</div>
+
+</div>
 
 </div>
 
 </body>
+
 </html>
