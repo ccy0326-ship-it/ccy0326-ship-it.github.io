@@ -53,7 +53,7 @@ body {
     background-color: #f0f0f0;
 }
 
-/* 詳細資訊（可滾動） */
+/* 詳細資訊（重點修正） */
 .details {
     margin-top: 10px;
     display: none;
@@ -62,8 +62,18 @@ body {
     border-top: 1px solid #ccc;
     padding-top: 10px;
 
-    max-height: 120px;      /* ⭐重點：限制高度 */
-    overflow-y: auto;       /* ⭐重點：出現滾動條 */
+    max-height: 120px;
+    overflow-y: scroll;   /* ⭐強制顯示 scrollbar */
+}
+
+/* 自訂 scrollbar（讓你一定看得到） */
+.details::-webkit-scrollbar {
+    width: 8px;
+}
+
+.details::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 4px;
 }
 </style>
 </head>
@@ -81,7 +91,7 @@ body {
         </button>
     </div>
 
-    <!-- 詳細資訊 -->
+    <!-- 詳細資訊（刻意放很多內容讓一定可滾動） -->
     <div id="details" class="details">
         <p>日期：2017/10/12</p>
         <p>檔名：20171012_1.jpg</p>
@@ -93,6 +103,9 @@ body {
         <p>更多資訊2</p>
         <p>更多資訊3</p>
         <p>更多資訊4</p>
+        <p>更多資訊5</p>
+        <p>更多資訊6</p>
+        <p>更多資訊7</p>
     </div>
 
 </div>
