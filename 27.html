@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- ⭐ 這行是關鍵 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Responsive Layout</title>
 
 <style>
@@ -14,7 +18,6 @@ body {
   height: 100vh;
 }
 
-/* 外框 */
 .container {
   background: white;
   padding: 15px;
@@ -23,14 +26,12 @@ body {
   border-radius: 12px;
 }
 
-/* 上方 */
 .header {
   background: #a8cf45;
   height: 80px;
   margin-bottom: 10px;
 }
 
-/* 中間 */
 .middle {
   display: flex;
   gap: 10px;
@@ -43,7 +44,6 @@ body {
   flex: 1;
 }
 
-/* 下方 */
 .footer {
   display: flex;
   gap: 10px;
@@ -55,24 +55,13 @@ body {
   flex: 1;
 }
 
-/* 🔥 預設 = b圖（大螢幕） */
-/* 中間：3欄 */
-/* 下方：4欄 */
-
-
-/* 🔥 小於480px = a圖（直排） */
+/* 小於480px */
 @media (max-width: 480px) {
 
-  /* 中間改直排 */
   .middle {
     flex-direction: column;
   }
 
-  .box {
-    width: 100%;
-  }
-
-  /* 下方變2x2 */
   .footer {
     flex-wrap: wrap;
   }
