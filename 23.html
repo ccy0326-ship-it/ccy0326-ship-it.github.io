@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Image Info UI</title>
+<title>Image Preview UI</title>
 
 <style>
 body {
@@ -16,14 +16,40 @@ body {
 /* 外框 */
 .container {
     width: 520px;
-    background: #ffffff;
-    padding: 15px;
+    background: #fff;
     border: 1px solid #ddd;
 }
 
-/* 圖片區塊 */
-.image-box {
-    position: relative;
+/* ⭐ 上方 header（重點） */
+.header {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 左側文字 */
+.title {
+    font-size: 13px;
+    color: #2f2f2f;
+}
+
+/* 按鈕 */
+.btn {
+    height: 22px;
+    padding: 0 10px;
+    border-radius: 8px;
+    border: 1px solid #2f2f2f;
+    background-color: #ffffff;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f0f0f0;
 }
 
 /* 圖片 */
@@ -32,41 +58,19 @@ body {
     display: block;
 }
 
-/* 右上角按鈕 */
-.btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-
-    height: 22px;
-    padding: 0 10px;
-    border-radius: 8px;
-    border: 1px solid #2f2f2f;
-    background-color: #ffffff;
-
-    font-size: 13px;
-    color: #2f2f2f;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #f0f0f0;
-}
-
-/* 詳細資訊（重點修正） */
+/* 詳細資訊 */
 .details {
-    margin-top: 10px;
     display: none;
     font-size: 13px;
     color: #707070;
     border-top: 1px solid #ccc;
-    padding-top: 10px;
+    padding: 10px;
 
     max-height: 120px;
-    overflow-y: scroll;   /* ⭐強制顯示 scrollbar */
+    overflow-y: scroll; /* 強制 scrollbar */
 }
 
-/* 自訂 scrollbar（讓你一定看得到） */
+/* scrollbar（確保看得到） */
 .details::-webkit-scrollbar {
     width: 8px;
 }
@@ -82,16 +86,21 @@ body {
 
 <div class="container">
 
-    <!-- 圖片 + 按鈕 -->
-    <div class="image-box">
-        <img src="https://picsum.photos/500/300" alt="image">
+    <!-- ⭐ 上方長框 -->
+    <div class="header">
+        <div class="title">預覽</div>
 
         <button class="btn" onclick="toggleDetails()">
             查看資訊
         </button>
     </div>
 
-    <!-- 詳細資訊（刻意放很多內容讓一定可滾動） -->
+    <!-- 圖片 -->
+    <div class="image-box">
+        <img src="https://picsum.photos/500/300">
+    </div>
+
+    <!-- 詳細資訊 -->
     <div id="details" class="details">
         <p>日期：2017/10/12</p>
         <p>檔名：20171012_1.jpg</p>
@@ -104,8 +113,6 @@ body {
         <p>更多資訊3</p>
         <p>更多資訊4</p>
         <p>更多資訊5</p>
-        <p>更多資訊6</p>
-        <p>更多資訊7</p>
     </div>
 
 </div>
