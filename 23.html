@@ -2,77 +2,88 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Button Interaction Example</title>
+<title>UI Example</title>
 
 <style>
-    body {
-        font-family: Roboto, sans-serif;
-        text-align: center;
-        padding: 20px;
-    }
+body {
+    font-family: Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
 
-    .container {
-        width: 500px;
-        margin: auto;
-    }
+/* 外框 */
+.container {
+    width: 500px;
+}
 
-    img {
-        width: 100%;
-        height: auto;
-    }
+/* 圖片區塊（關鍵：relative） */
+.image-box {
+    position: relative;
+}
 
-    /* 按鈕設計 */
-    .btn {
-        margin-top: 10px;
-        height: 22px;
-        padding: 0 10px;
-        border-radius: 8px;
-        border: 1px solid #2f2f2f;
-        background-color: #ffffff;
-        font-size: 13px;
-        cursor: pointer;
-    }
+/* 圖片 */
+.image-box img {
+    width: 100%;
+    display: block;
+}
 
-    .btn:hover {
-        background-color: #f0f0f0;
-    }
+/* 按鈕（右上角） */
+.btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 
-    /* 詳細資訊區塊 */
-    .details {
-        margin-top: 15px;
-        display: none;
-        color: #707070;
-        font-size: 13px;
-        border-top: 1px solid #ccc;
-        padding-top: 10px;
-    }
+    height: 22px;
+    padding: 0 10px;
+    border-radius: 8px;
+    border: 1px solid #2f2f2f;
+    background-color: #ffffff;
+
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* 詳細資訊 */
+.details {
+    margin-top: 10px;
+    display: none;
+    font-size: 13px;
+    color: #707070;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
 </style>
 </head>
 
 <body>
 
 <div class="container">
-    <img src="https://picsum.photos/500/300" alt="sample image">
 
-    <button class="btn" onclick="showDetails()">
-        Show Details
-    </button>
+    <div class="image-box">
+        <img src="https://picsum.photos/500/300">
+
+        <button class="btn" onclick="toggleDetails()">
+            查看資訊
+        </button>
+    </div>
 
     <div id="details" class="details">
-        <p>This is the detailed information about the image.</p>
-        <p>You can add description, metadata, or anything here.</p>
+        <p>日期：2017/10/12</p>
+        <p>檔名：image.jpg</p>
+        <p>大小：400KB</p>
     </div>
+
 </div>
 
 <script>
-function showDetails() {
-    const detail = document.getElementById("details");
-
-    if (detail.style.display === "none") {
-        detail.style.display = "block";
-    } else {
-        detail.style.display = "none";
-    }
+function toggleDetails() {
+    const d = document.getElementById("details");
+    d.style.display = (d.style.display === "block") ? "none" : "block";
 }
 </script>
 
