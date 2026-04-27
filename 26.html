@@ -18,18 +18,27 @@ body {
 /* 主容器 */
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* ⭐ 保證全部從頂開始 */
+    justify-content: center; /* ⭐ 改這個 */
+    align-items: flex-start;
     position: relative;
     max-width: 1000px;
     margin: auto;
 }
 
-/* 左右圖片 */
+/* 左右圖片（關鍵修改） */
 .img-box {
-    width: 33%;
+    width: 32%; /* ⭐ 原本33 → 32 讓空間變小 */
     height: 300px;
     overflow: hidden;
+}
+
+/* ⭐ 讓圖片往中間靠 */
+.left {
+    margin-right: 10px;
+}
+
+.right {
+    margin-left: 10px;
 }
 
 /* 左：不變形 + 圓角 */
@@ -46,10 +55,10 @@ body {
     height: 100%;
 }
 
-/* ⭐ 中間圓形（頂對齊版本） */
+/* 中間圓形 */
 .circle {
     position: absolute;
-    top: 0; /* ⭐ 跟左右圖片頂對齊 */
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
 
@@ -61,6 +70,7 @@ body {
     border: 6px solid white;
     box-shadow: 0 5px 15px rgba(0,0,0,0.25);
     background: white;
+    z-index: 10;
 }
 
 .circle img {
@@ -69,7 +79,7 @@ body {
     object-fit: cover;
 }
 
-/* 📱 RWD（手機） */
+/* 📱 RWD */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -94,17 +104,14 @@ body {
 
 <div class="container">
 
-    <!-- 左 -->
     <div class="img-box left">
         <img src="https://picsum.photos/id/1015/600/400">
     </div>
 
-    <!-- 中間圓 -->
     <div class="circle">
         <img src="https://picsum.photos/id/1016/400/400">
     </div>
 
-    <!-- 右 -->
     <div class="img-box right">
         <img src="https://picsum.photos/id/1015/600/400">
     </div>
