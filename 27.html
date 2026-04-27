@@ -7,7 +7,6 @@
 <style>
 body {
   margin: 0;
-  padding: 0;
   background: #4aa3d8;
   display: flex;
   justify-content: center;
@@ -18,20 +17,20 @@ body {
 /* 外框 */
 .container {
   background: white;
-  padding: 10px;
+  padding: 15px;
   width: 90%;
-  max-width: 500px;
-  border-radius: 10px;
+  max-width: 600px;
+  border-radius: 12px;
 }
 
-/* 上方綠色 */
+/* 上方 */
 .header {
   background: #a8cf45;
   height: 80px;
   margin-bottom: 10px;
 }
 
-/* 中間區塊 */
+/* 中間 */
 .middle {
   display: flex;
   gap: 10px;
@@ -40,11 +39,11 @@ body {
 
 .box {
   background: #1bb3b3;
-  flex: 1;
   height: 80px;
+  flex: 1;
 }
 
-/* 下方灰色 */
+/* 下方 */
 .footer {
   display: flex;
   gap: 10px;
@@ -52,17 +51,28 @@ body {
 
 .small {
   background: #ccc;
-  flex: 1;
   height: 50px;
+  flex: 1;
 }
 
-/* 🔥 小於480px */
+/* 🔥 預設 = b圖（大螢幕） */
+/* 中間：3欄 */
+/* 下方：4欄 */
+
+
+/* 🔥 小於480px = a圖（直排） */
 @media (max-width: 480px) {
 
+  /* 中間改直排 */
   .middle {
     flex-direction: column;
   }
 
+  .box {
+    width: 100%;
+  }
+
+  /* 下方變2x2 */
   .footer {
     flex-wrap: wrap;
   }
