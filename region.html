@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Region Info</title>
+    <style>
+        body { text-align:center; font-family:Arial; background:#f4f9f9; }
+        button { margin:10px; padding:10px 20px; cursor:pointer; }
+    </style>
+    <script>
+        function showRegion(region) {
+            let text = document.getElementById("info");
+
+            if (region === "africa") {
+                text.innerHTML = "Africa: Many children cannot access education.";
+            } else if (region === "asia") {
+                text.innerHTML = "Asia: Unequal education resources in some areas.";
+            } else if (region === "europe") {
+                text.innerHTML = "Europe: Education quality is generally high.";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>Region Education Info</h1>
+
+<button onclick="showRegion('africa')">Africa</button>
+<button onclick="showRegion('asia')">Asia</button>
+<button onclick="showRegion('europe')">Europe</button>
+
+<p id="info"></p>
+
+<br>
+<a href="index.html">⬅ Back</a>
+
+</body>
+</html>
