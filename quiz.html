@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <style>
+        body { text-align:center; font-family:Arial; background:#f4f9f9; }
+        button { margin:10px; padding:10px 20px; cursor:pointer; }
+    </style>
+    <script>
+        function checkAnswer(answer) {
+            let result = document.getElementById("result");
+            if (answer === "correct") {
+                result.innerHTML = "✅ Correct!";
+            } else {
+                result.innerHTML = "❌ Wrong!";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>Education Quiz</h1>
+<p>Which is a major issue in global education?</p>
+
+<button onclick="checkAnswer('wrong')">Good internet</button>
+<button onclick="checkAnswer('correct')">Lack of resources</button>
+<button onclick="checkAnswer('wrong')">Too many schools</button>
+
+<p id="result"></p>
+
+<br>
+<a href="index.html">⬅ Back</a>
+
+</body>
+</html>
