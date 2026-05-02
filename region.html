@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>World Map - Continents</title>
+    <title>Region Info</title>
+
     <style>
         body {
             text-align: center;
@@ -11,51 +12,64 @@
 
         h1 {
             margin-top: 30px;
+            color: #264653;
         }
 
-        svg {
-            width: 600px;
+        /* 按鈕區排版 */
+        .button-container {
             margin-top: 20px;
         }
 
-        path {
-            fill: #2a9d8f;
+        .btn {
+            margin: 10px;
+            padding: 12px 18px;
+            border: none;
+            background-color: #2a9d8f;
+            color: white;
+            border-radius: 8px;
             cursor: pointer;
+            font-size: 16px;
             transition: 0.3s;
         }
 
-        path:hover {
-            fill: #e76f51;
+        .btn:hover {
+            background-color: #21867a;
+            transform: scale(1.05);
         }
 
         #info {
-            margin-top: 20px;
+            margin-top: 25px;
             font-size: 18px;
-            color: #264653;
+            color: #333;
+        }
+
+        a {
+            display: block;
+            margin-top: 30px;
         }
     </style>
 
     <script>
-        function showInfo(continent) {
+        function showInfo(region) {
             let text = document.getElementById("info");
 
-            if (continent === "north_america") {
-                text.innerHTML = "North America: Advanced education systems, but inequality still exists.";
+            if (region === "north_america") {
+                text.innerHTML = "North America: Advanced education systems but inequality still exists.";
             } 
-            else if (continent === "south_america") {
-                text.innerHTML = "South America: Some regions face challenges like limited resources and access.";
+            else if (region === "south_america") {
+                text.innerHTML = "South America: Some regions lack resources and access.";
             } 
-            else if (continent === "europe") {
-                text.innerHTML = "Europe: High-quality and accessible education systems.";
+            else if (region === "europe") {
+                text.innerHTML = "Europe: High-quality and accessible education.";
             } 
-            else if (continent === "africa") {
-                text.innerHTML = "Africa: Many children lack access to basic education.";
+            else if (region === "africa") {
+                text.innerHTML = "Africa: Many children cannot access basic education.";
             } 
-            else if (continent === "asia") {
-                text.innerHTML = "Asia: Unequal resources between urban and rural areas.";
+            else if (region === "asia") {
+                text.innerHTML = "Asia: Unequal education between urban and rural areas.";
             } 
-            else if (continent === "oceania") {
-                text.innerHTML = "Oceania: Remote areas face challenges in accessing education.";
+            else if (region === "oceania") {
+                text.innerHTML = "Oceania: Remote areas face challenges in education access.";
             }
         }
     </script>
@@ -63,41 +77,20 @@
 
 <body>
 
-<h1>Click a Continent</h1>
-    <img src="images/IMG_0499.png" width="80%">
+<h1>Choose a Continent</h1>
 
-<svg viewBox="0 0 400 200">
-
-    <!-- North America -->
-    <path d="M40,30 L90,20 L100,70 L50,80 Z"
-          onclick="showInfo('north_america')" />
-
-    <!-- South America -->
-    <path d="M60,90 L90,110 L80,160 L50,140 Z"
-          onclick="showInfo('south_america')" />
-
-    <!-- Europe -->
-    <path d="M150,50 L180,45 L190,70 L160,75 Z"
-          onclick="showInfo('europe')" />
-
-    <!-- Africa -->
-    <path d="M160,80 L200,90 L190,150 L150,140 Z"
-          onclick="showInfo('africa')" />
-
-    <!-- Asia -->
-    <path d="M210,50 L300,40 L320,120 L230,130 Z"
-          onclick="showInfo('asia')" />
-
-    <!-- Oceania -->
-    <path d="M300,140 L340,150 L330,180 L290,170 Z"
-          onclick="showInfo('oceania')" />
-
-</svg>
+<div class="button-container">
+    <button class="btn" onclick="showInfo('north_america')">North America</button>
+    <button class="btn" onclick="showInfo('south_america')">South America</button>
+    <button class="btn" onclick="showInfo('europe')">Europe</button>
+    <button class="btn" onclick="showInfo('africa')">Africa</button>
+    <button class="btn" onclick="showInfo('asia')">Asia</button>
+    <button class="btn" onclick="showInfo('oceania')">Oceania</button>
+</div>
 
 <p id="info">Click a continent to see education information</p>
 
-<br>
-<a href="Final.html">⬅ Back</a>
+<a href="Final.html">⬅ Back to Home</a>
 
 </body>
 </html>
