@@ -2,174 +2,29 @@
 <html>
 <head>
     <title>Vote</title>
-
     <style>
-        body {
-            text-align: center;
-            font-family: Arial;
-            background: #f4f9f9;
-        }
-
-        h1 {
-            margin-top: 30px;
-            color: #264653;
-        }
-
-        /* 題目按鈕（純文字） */
-        .question {
-            margin: 10px;
-            font-size: 18px;
-            cursor: pointer;
-            color: #2a9d8f;
-        }
-
-        .question:hover {
-            text-decoration: underline;
-        }
-
-        /* 選項區 */
-        .options {
-            display: none;
-            margin: 10px;
-        }
-
-        button {
-            margin: 5px;
-            padding: 8px 15px;
-            cursor: pointer;
-        }
-
-        #result {
-            margin-top: 20px;
-            font-size: 18px;
-        }
+        body { text-align:center; font-family:Arial; background:#f4f9f9; }
+        a { display:block; margin:10px; font-size:18px; color:#2a9d8f; }
     </style>
-
-    <script>
-        function showOptions(id) {
-            // 先全部關閉
-            let all = document.querySelectorAll(".options");
-            all.forEach(opt => opt.style.display = "none");
-
-            // 再打開點的那個
-            document.getElementById(id).style.display = "block";
-        }
-
-        function vote(answer) {
-            document.getElementById("result").innerHTML =
-                "You selected: " + answer;
-        }
-    </script>
 </head>
 
 <body>
 
-<h1>Vote on Education Issues</h1>
+<h1>Choose a Question</h1>
 
-<!-- Q1 -->
-<div class="question" onclick="showOptions('q1')">
-What is the biggest problem in global education?
-</div>
-<div class="options" id="q1">
-    <button onclick="vote('Poverty')">Poverty</button>
-    <button onclick="vote('Lack of resources')">Lack of resources</button>
-    <button onclick="vote('Gender inequality')">Gender inequality</button>
-</div>
+<a href="q1.html">1. Biggest problem in education?</a>
+<a href="q2.html">2. Most important factor?</a>
+<a href="q3.html">3. Who faces most difficulty?</a>
+<a href="q4.html">4. Best solution?</a>
+<a href="q5.html">5. Biggest barrier?</a>
+<a href="q6.html">6. What helps learning?</a>
+<a href="q7.html">7. Government focus?</a>
+<a href="q8.html">8. Role of technology?</a>
+<a href="q9.html">9. Best learning type?</a>
+<a href="q10.html">10. Why is education important?</a>
 
-<!-- Q2 -->
-<div class="question" onclick="showOptions('q2')">
-What is the most important factor for good education?
-</div>
-<div class="options" id="q2">
-    <button onclick="vote('Teachers')">Qualified teachers</button>
-    <button onclick="vote('Technology')">Technology</button>
-    <button onclick="vote('Facilities')">School facilities</button>
-</div>
-
-<!-- Q3 -->
-<div class="question" onclick="showOptions('q3')">
-Which group faces the most difficulty?
-</div>
-<div class="options" id="q3">
-    <button onclick="vote('Children in poverty')">Children in poverty</button>
-    <button onclick="vote('Girls')">Girls</button>
-    <button onclick="vote('Rural students')">Rural students</button>
-</div>
-
-<!-- Q4 -->
-<div class="question" onclick="showOptions('q4')">
-Best solution to improve education?
-</div>
-<div class="options" id="q4">
-    <button onclick="vote('Free education')">Free education</button>
-    <button onclick="vote('Online learning')">Online learning</button>
-    <button onclick="vote('Government support')">Government support</button>
-</div>
-
-<!-- Q5 -->
-<div class="question" onclick="showOptions('q5')">
-Biggest barrier to education?
-</div>
-<div class="options" id="q5">
-    <button onclick="vote('Cost')">Cost</button>
-    <button onclick="vote('Distance')">Distance</button>
-    <button onclick="vote('Lack of teachers')">Lack of teachers</button>
-</div>
-
-<!-- Q6 -->
-<div class="question" onclick="showOptions('q6')">
-What helps students learn better?
-</div>
-<div class="options" id="q6">
-    <button onclick="vote('Technology')">Technology</button>
-    <button onclick="vote('Teachers')">Good teachers</button>
-    <button onclick="vote('Environment')">Safe environment</button>
-</div>
-
-<!-- Q7 -->
-<div class="question" onclick="showOptions('q7')">
-What should governments focus on?
-</div>
-<div class="options" id="q7">
-    <button onclick="vote('Build schools')">Building schools</button>
-    <button onclick="vote('Train teachers')">Training teachers</button>
-    <button onclick="vote('Scholarships')">Scholarships</button>
-</div>
-
-<!-- Q8 -->
-<div class="question" onclick="showOptions('q8')">
-Role of technology in education?
-</div>
-<div class="options" id="q8">
-    <button onclick="vote('Very important')">Very important</button>
-    <button onclick="vote('Somewhat')">Somewhat important</button>
-    <button onclick="vote('Not important')">Not important</button>
-</div>
-
-<!-- Q9 -->
-<div class="question" onclick="showOptions('q9')">
-Most effective learning type?
-</div>
-<div class="options" id="q9">
-    <button onclick="vote('Online')">Online learning</button>
-    <button onclick="vote('Classroom')">Classroom learning</button>
-    <button onclick="vote('Hybrid')">Hybrid learning</button>
-</div>
-
-<!-- Q10 -->
-<div class="question" onclick="showOptions('q10')">
-Why is education important?
-</div>
-<div class="options" id="q10">
-    <button onclick="vote('Job')">Get a job</button>
-    <button onclick="vote('Life quality')">Improve life quality</button>
-    <button onclick="vote('Equality')">Reduce inequality</button>
-</div>
-
-<p id="result"></p>
-
-<br>
-<a href="Final.html">⬅ Back</a>
+<!-- 返回主頁 -->
+<a href="Final.html">⬅Back</a>
 
 </body>
 </html>
