@@ -1,21 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Region Info</title>
+    <title>World Map - Continents</title>
     <style>
-        body { text-align:center; font-family:Arial; background:#f4f9f9; }
-        button { margin:10px; padding:10px 20px; cursor:pointer; }
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: #f4f9f9;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        svg {
+            width: 600px;
+            margin-top: 20px;
+        }
+
+        path {
+            fill: #2a9d8f;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        path:hover {
+            fill: #e76f51;
+        }
+
+        #info {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #264653;
+        }
     </style>
+
     <script>
-        function showRegion(region) {
+        function showInfo(continent) {
             let text = document.getElementById("info");
 
-            if (region === "africa") {
-                text.innerHTML = "Africa: Many children cannot access education.";
-            } else if (region === "asia") {
-                text.innerHTML = "Asia: Unequal education resources in some areas.";
-            } else if (region === "europe") {
-                text.innerHTML = "Europe: Education quality is generally high.";
+            if (continent === "north_america") {
+                text.innerHTML = "North America: Advanced education systems, but inequality still exists.";
+            } 
+            else if (continent === "south_america") {
+                text.innerHTML = "South America: Some regions face challenges like limited resources and access.";
+            } 
+            else if (continent === "europe") {
+                text.innerHTML = "Europe: High-quality and accessible education systems.";
+            } 
+            else if (continent === "africa") {
+                text.innerHTML = "Africa: Many children lack access to basic education.";
+            } 
+            else if (continent === "asia") {
+                text.innerHTML = "Asia: Unequal resources between urban and rural areas.";
+            } 
+            else if (continent === "oceania") {
+                text.innerHTML = "Oceania: Remote areas face challenges in accessing education.";
             }
         }
     </script>
@@ -23,16 +63,40 @@
 
 <body>
 
-<h1>Region Education Info</h1>
+<h1>Click a Continent</h1>
 
-<button onclick="showRegion('africa')">Africa</button>
-<button onclick="showRegion('asia')">Asia</button>
-<button onclick="showRegion('europe')">Europe</button>
+<svg viewBox="0 0 400 200">
 
-<p id="info"></p>
+    <!-- North America -->
+    <path d="M40,30 L90,20 L100,70 L50,80 Z"
+          onclick="showInfo('north_america')" />
+
+    <!-- South America -->
+    <path d="M60,90 L90,110 L80,160 L50,140 Z"
+          onclick="showInfo('south_america')" />
+
+    <!-- Europe -->
+    <path d="M150,50 L180,45 L190,70 L160,75 Z"
+          onclick="showInfo('europe')" />
+
+    <!-- Africa -->
+    <path d="M160,80 L200,90 L190,150 L150,140 Z"
+          onclick="showInfo('africa')" />
+
+    <!-- Asia -->
+    <path d="M210,50 L300,40 L320,120 L230,130 Z"
+          onclick="showInfo('asia')" />
+
+    <!-- Oceania -->
+    <path d="M300,140 L340,150 L330,180 L290,170 Z"
+          onclick="showInfo('oceania')" />
+
+</svg>
+
+<p id="info">Click a continent to see education information</p>
 
 <br>
-<a href="Final.html">⬅ Back</a>
+<a href="index.html">⬅ Back</a>
 
 </body>
 </html>
