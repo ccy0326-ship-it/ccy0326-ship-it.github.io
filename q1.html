@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote Q1</title>
+
+    <style>
+        body { 
+            text-align:center; 
+            font-family:Arial; 
+            background:#f4f9f9; 
+        }
+
+        .option {
+            display:block;
+            margin:10px auto;
+            padding:12px;
+            width:250px;
+            background:#2a9d8f;
+            color:white;
+            border-radius:8px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .option:hover {
+            background:#21867a;
+        }
+
+        #result {
+            margin-top:20px;
+            font-size:18px;
+        }
+    </style>
+
+    <script>
+        let votes = JSON.parse(localStorage.getItem("q1")) || {
+            a: 0,
+            b: 0,
+            c: 0
+        };
+
+        function vote(option) {
+            votes[option]++;
+            localStorage.setItem("q1", JSON.stringify(votes));
+            showResult();
+        }
+
+        function showResult() {
+            let total = votes.a + votes.b + votes.c;
+
+            let a = total ? (votes.a/total*100).toFixed(1) : 0;
+            let b = total ? (votes.b/total*100).toFixed(1) : 0;
+            let c = total ? (votes.c/total*100).toFixed(1) : 0;
+
+            document.getElementById("result").innerHTML =
+                "Poverty: " + votes.a + " (" + a + "%)<br>" +
+                "Resources: " + votes.b + " (" + b + "%)<br>" +
+                "Gender: " + votes.c + " (" + c + "%)";
+        }
+
+        window.onload = showResult;
+    </script>
+</head>
+
+<body>
+
+<h1>What is the biggest problem in global education?</h1>
+
+<div class="option" onclick="vote('a')">Poverty</div>
+<div class="option" onclick="vote('b')">Lack of resources</div>
+<div class="option" onclick="vote('c')">Gender inequality</div>
+
+<div id="result"></div>
+
+<br>
+<a href="vote.html">⬅ Back</a>
+
+</body>
+</html>
