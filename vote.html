@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote</title>
+    <style>
+        body { text-align:center; font-family:Arial; background:#f4f9f9; }
+        button { margin:10px; padding:10px 20px; cursor:pointer; }
+    </style>
+    <script>
+        let votes = {
+            poverty: 0,
+            resources: 0,
+            gender: 0
+        };
+
+        function vote(type) {
+            votes[type]++;
+            document.getElementById("result").innerHTML =
+                "Poverty: " + votes.poverty +
+                " | Resources: " + votes.resources +
+                " | Gender: " + votes.gender;
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>Vote</h1>
+<p>What is the biggest education problem?</p>
+
+<button onclick="vote('poverty')">Poverty</button>
+<button onclick="vote('resources')">Lack of resources</button>
+<button onclick="vote('gender')">Gender inequality</button>
+
+<p id="result"></p>
+
+<br>
+<a href="index.html">⬅ Back</a>
+
+</body>
+</html>
