@@ -10,7 +10,6 @@
             background-color: #f4f9f9;
         }
 
-        /* 🔷 標題區 */
         .header {
             text-align: center;
             padding: 20px;
@@ -18,56 +17,33 @@
             border-bottom: 2px solid black;
         }
 
-        /* 🔷 導覽列 */
         .navbar {
             display: flex;
             justify-content: center;
             gap: 60px;
             padding: 15px 0;
             border-bottom: 2px solid black;
-            position: sticky;   /* ⭐ 固定在上面 */
-            top: 0;
             background: white;
         }
 
-        /* 🔷 文字按鈕 */
+        /* ⭐ 重點在這 */
         .nav-link {
             text-decoration: none;
             color: black;
             font-size: 18px;
-            position: relative;
-            transition: color 0.3s ease;
+            transition: 0.3s ease;
+            display: inline-block;
         }
 
-        /* 🔥 滑過變紅 */
         .nav-link:hover {
             color: red;
+            transform: scale(1.2);
         }
 
-        /* 🔥 底線動畫（高級感） */
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            width: 0%;
-            height: 2px;
-            left: 0;
-            bottom: -5px;
-            background: red;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* 🔥 當前頁面（active） */
+        /* 當前頁 */
         .active {
             color: red;
             font-weight: bold;
-        }
-
-        .active::after {
-            width: 100%;
         }
     </style>
 </head>
@@ -79,7 +55,7 @@
 </div>
 
 <div class="navbar">
-    <a class="nav-link active" href="Final.html">Information</a>
+    <a class="nav-link active" href="index.html">Information</a>
     <a class="nav-link" href="quiz.html">Quiz</a>
     <a class="nav-link" href="region.html">Region Info</a>
     <a class="nav-link" href="vote.html">Vote</a>
