@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Region Info</title>
+    <title>Region Map</title>
 
     <style>
+        html { overflow-y: scroll; }
+
         body {
             margin: 0;
             font-family: Arial;
             background: #f4f9f9;
         }
 
-        /* 🔷 Header（固定） */
+        /* Header */
         .header {
             position: fixed;
             top: 0;
             width: 100%;
             background: white;
-            padding: 20px;
-            font-size: 36px;
-            text-align: center;
             border-bottom: 2px solid black;
             z-index: 1000;
         }
 
-        /* 🔷 Navbar（固定） */
+        .header-inner {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 36px;
+        }
+
+        /* Navbar */
         .navbar {
             position: fixed;
             top: 80px;
             width: 100%;
+            background: white;
+            border-bottom: 2px solid black;
+            z-index: 999;
+        }
+
+        .nav-inner {
+            max-width: 1000px;
+            margin: auto;
             display: flex;
             justify-content: center;
             gap: 60px;
             padding: 15px 0;
-            border-bottom: 2px solid black;
-            background: white;
-            z-index: 999;
         }
 
         .nav-link {
@@ -42,12 +54,11 @@
             color: black;
             font-size: 18px;
             transition: 0.3s;
-            display: inline-block;
         }
 
         .nav-link:hover {
             color: red;
-            transform: scale(1.2);
+            transform: translateY(-2px);
         }
 
         .active {
@@ -55,33 +66,56 @@
             font-weight: bold;
         }
 
-        /* 🔷 內容區（關鍵） */
+        /* Content */
         .content {
-            margin-top: 160px;
+            max-width: 1000px;
+            margin: 160px auto 0;
             text-align: center;
         }
 
-        /* 🔷 按鈕 */
-        .btn {
-            margin: 10px;
-            padding: 12px 18px;
-            border: none;
-            background-color: #2a9d8f;
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
+        /* 🌍 地圖區 */
+        .map {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 40px;
         }
 
-        .btn:hover {
-            background-color: #21867a;
-            transform: scale(1.1);
+        .region {
+            padding: 40px;
+            background: #2a9d8f;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.6s forwards;
+        }
+
+        .region:nth-child(1) { animation-delay: 0.1s; }
+        .region:nth-child(2) { animation-delay: 0.2s; }
+        .region:nth-child(3) { animation-delay: 0.3s; }
+        .region:nth-child(4) { animation-delay: 0.4s; }
+        .region:nth-child(5) { animation-delay: 0.5s; }
+        .region:nth-child(6) { animation-delay: 0.6s; }
+
+        .region:hover {
+            background: #21867a;
+            transform: translateY(-8px);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         #info {
-            margin-top: 25px;
+            margin-top: 30px;
             font-size: 18px;
-            color: #333;
         }
     </style>
 
@@ -90,22 +124,22 @@
             let text = document.getElementById("info");
 
             if (region === "north_america") {
-                text.innerHTML = "North America: Advanced education systems but inequality still exists.";
+                text.innerHTML = "North America: Advanced systems but inequality exists.";
             } 
             else if (region === "south_america") {
-                text.innerHTML = "South America: Some regions lack resources and access.";
+                text.innerHTML = "South America: Some areas lack resources.";
             } 
             else if (region === "europe") {
-                text.innerHTML = "Europe: High-quality and accessible education.";
+                text.innerHTML = "Europe: High-quality education access.";
             } 
             else if (region === "africa") {
-                text.innerHTML = "Africa: Many children cannot access basic education.";
+                text.innerHTML = "Africa: Limited access to education.";
             } 
             else if (region === "asia") {
-                text.innerHTML = "Asia: Unequal education between urban and rural areas.";
+                text.innerHTML = "Asia: Urban-rural education gap.";
             } 
             else if (region === "oceania") {
-                text.innerHTML = "Oceania: Remote areas face challenges in education access.";
+                text.innerHTML = "Oceania: Remote education challenges.";
             }
         }
     </script>
@@ -113,30 +147,33 @@
 
 <body>
 
-<!-- 🔥 固定 Header -->
-<div class="header">SG4</div>
-
-<!-- 🔥 固定 Navbar -->
-<div class="navbar">
-    <a class="nav-link" href="Final.html">Information</a>
-    <a class="nav-link" href="quiz.html">Quiz</a>
-    <a class="nav-link active" href="region.html">Region Info</a>
-    <a class="nav-link" href="vote.html">Vote</a>
+<div class="header">
+    <div class="header-inner">SG4</div>
 </div>
 
-<!-- 🔷 內容 -->
+<div class="navbar">
+    <div class="nav-inner">
+        <a class="nav-link" href="Final.html">Information</a>
+        <a class="nav-link" href="quiz.html">Quiz</a>
+        <a class="nav-link active" href="region.html">Region Info</a>
+        <a class="nav-link" href="vote.html">Vote</a>
+    </div>
+</div>
+
 <div class="content">
 
-    <h1>Choose a Continent</h1>
+    <h1>Click a Region</h1>
 
-    <button class="btn" onclick="showInfo('north_america')">North America</button>
-    <button class="btn" onclick="showInfo('south_america')">South America</button>
-    <button class="btn" onclick="showInfo('europe')">Europe</button>
-    <button class="btn" onclick="showInfo('africa')">Africa</button>
-    <button class="btn" onclick="showInfo('asia')">Asia</button>
-    <button class="btn" onclick="showInfo('oceania')">Oceania</button>
+    <div class="map">
+        <div class="region" onclick="showInfo('north_america')">North America</div>
+        <div class="region" onclick="showInfo('south_america')">South America</div>
+        <div class="region" onclick="showInfo('europe')">Europe</div>
+        <div class="region" onclick="showInfo('africa')">Africa</div>
+        <div class="region" onclick="showInfo('asia')">Asia</div>
+        <div class="region" onclick="showInfo('oceania')">Oceania</div>
+    </div>
 
-    <p id="info">Click a continent to see education information</p>
+    <p id="info">Click a region to see education info</p>
 
 </div>
 
