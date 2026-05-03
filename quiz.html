@@ -4,6 +4,11 @@
     <title>Quiz</title>
 
     <style>
+        /* ⭐ 防止左右跳動 */
+        html {
+            overflow-y: scroll;
+        }
+
         body {
             margin: 0;
             font-family: Arial;
@@ -16,11 +21,16 @@
             top: 0;
             width: 100%;
             background: white;
-            padding: 20px;
-            font-size: 36px;
-            text-align: center;
             border-bottom: 2px solid black;
             z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 36px;
         }
 
         /* 🔷 Navbar */
@@ -28,26 +38,32 @@
             position: fixed;
             top: 80px;
             width: 100%;
+            background: white;
+            border-bottom: 2px solid black;
+            z-index: 999;
+        }
+
+        .nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
             display: flex;
             justify-content: center;
             gap: 60px;
             padding: 15px 0;
-            border-bottom: 2px solid black;
-            background: white;
-            z-index: 999;
         }
 
         .nav-link {
             text-decoration: none;
             color: black;
             font-size: 18px;
-            transition: 0.3s;
             display: inline-block;
+            transition: 0.3s;
         }
 
+        /* ⭐ 改掉scale（避免晃） */
         .nav-link:hover {
             color: red;
-            transform: scale(1.2);
+            transform: translateY(-2px);
         }
 
         .active {
@@ -55,13 +71,14 @@
             font-weight: bold;
         }
 
-        /* 🔥 題目區 */
+        /* 🔷 內容區 */
         .content {
-            margin-top: 160px;
-            padding-left: 40px;
+            max-width: 1000px;
+            margin: 160px auto 0 auto;
+            padding-left: 20px;
         }
 
-        /* 🔥 題目按鈕 */
+        /* 🔥 題目動畫 */
         .question {
             display: block;
             margin: 15px 0;
@@ -69,13 +86,12 @@
             cursor: pointer;
             color: #264653;
 
-            /* ⭐ 初始在左外 */
             opacity: 0;
             transform: translateX(-100px);
             animation: slideIn 0.6s forwards;
         }
 
-        /* ⭐ 每個題目延遲出現（更高級） */
+        /* 延遲動畫 */
         .question:nth-child(1) { animation-delay: 0.1s; }
         .question:nth-child(2) { animation-delay: 0.2s; }
         .question:nth-child(3) { animation-delay: 0.3s; }
@@ -87,13 +103,13 @@
         .question:nth-child(9) { animation-delay: 0.9s; }
         .question:nth-child(10){ animation-delay: 1s; }
 
-        /* 🔥 hover效果 */
+        /* hover效果（不影響版面） */
         .question:hover {
             color: red;
-            transform: translateX(10px) scale(1.1);
+            transform: translateX(10px);
         }
 
-        /* 🔥 動畫 */
+        /* 動畫 */
         @keyframes slideIn {
             to {
                 opacity: 1;
@@ -106,17 +122,21 @@
 <body>
 
 <!-- Header -->
-<div class="header">SG4</div>
+<div class="header">
+    <div class="header-inner">SG4</div>
+</div>
 
 <!-- Navbar -->
 <div class="navbar">
-    <a class="nav-link" href="Final.html">Information</a>
-    <a class="nav-link active" href="quiz.html">Quiz</a>
-    <a class="nav-link" href="region.html">Region Info</a>
-    <a class="nav-link" href="vote.html">Vote</a>
+    <div class="nav-inner">
+        <a class="nav-link" href="Final.html">Information</a>
+        <a class="nav-link active" href="quiz.html">Quiz</a>
+        <a class="nav-link" href="region.html">Region Info</a>
+        <a class="nav-link" href="vote.html">Vote</a>
+    </div>
 </div>
 
-<!-- 🔥 題目列表 -->
+<!-- Content -->
 <div class="content">
 
     <div class="question" onclick="location.href='q1.html'">
