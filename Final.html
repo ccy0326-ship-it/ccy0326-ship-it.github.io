@@ -2,52 +2,88 @@
 <html>
 <head>
     <title>SDG 4 Website</title>
+
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            text-align: center;
             background-color: #f4f9f9;
         }
 
-        h1 {
-            margin-top: 100px;
-            color: #264653;
+        /* 🔷 標題區 */
+        .header {
+            text-align: center;
+            padding: 20px;
+            font-size: 36px;
+            border-bottom: 2px solid black;
         }
 
-        .btn {
-            display: block;
-            width: 220px;
-            margin: 20px auto;
-            padding: 15px;
-            background-color: #2a9d8f;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
+        /* 🔷 導覽列 */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 15px 0;
+            border-bottom: 2px solid black;
+            position: sticky;   /* ⭐ 固定在上面 */
+            top: 0;
+            background: white;
         }
 
-        .btn:hover {
-            background-color: #21867a;
+        /* 🔷 文字按鈕 */
+        .nav-link {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        /* 🔥 滑過變紅 */
+        .nav-link:hover {
+            color: red;
+        }
+
+        /* 🔥 底線動畫（高級感） */
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: -5px;
+            background: red;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* 🔥 當前頁面（active） */
+        .active {
+            color: red;
+            font-weight: bold;
+        }
+
+        .active::after {
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
 
-    <h1>SDG 4: Quality Education</h1>
+<div class="header">
+    SG4
+</div>
 
-    <button class="btn" onclick="location.href='quiz.html'">
-        Quiz
-    </button>
-
-    <button class="btn" onclick="location.href='region.html'">
-        Region Info
-    </button>
-
-    <button class="btn" onclick="location.href='vote.html'">
-        Vote
-    </button>
+<div class="navbar">
+    <a class="nav-link active" href="Final.html">Information</a>
+    <a class="nav-link" href="quiz.html">Quiz</a>
+    <a class="nav-link" href="region.html">Region Info</a>
+    <a class="nav-link" href="vote.html">Vote</a>
+</div>
 
 </body>
 </html>
