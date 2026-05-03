@@ -13,76 +13,11 @@
             color: #222;
         }
 
-        /* 🔷 Header */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 80px;
-            background: white;
-            border-bottom: 1px solid #ccc;
-            z-index: 1000;
-        }
-
-        .header-inner {
-            max-width: 1000px;
-            margin: auto;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            font-size: 28px;
-            letter-spacing: 3px;
-        }
-
-        /* ☰ */
-        .menu-btn {
-            position: absolute;
-            left: 20px;
-            font-size: 26px;
-            cursor: pointer;
-        }
-
-        /* 🔷 Navbar */
-        .navbar {
-            position: fixed;
-            top: 80px;
-            width: 100%;
-            height: 60px;
-            background: white;
-            border-bottom: 1px solid #ccc;
-            z-index: 999;
-        }
-
-        .nav-inner {
-            max-width: 1000px;
-            margin: auto;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: #666;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-
-        .nav-link:hover { color: black; }
-
-        .active {
-            color: black;
-            font-weight: bold;
-        }
-
-        /* 🔷 Content */
+        /* 🔷 Content（⭐ 加padding避免貼邊） */
         .content {
             max-width: 900px;
             margin: 180px auto 50px;
+            padding: 0 20px;   /* ⭐ 關鍵 */
             text-align: center;
         }
 
@@ -92,7 +27,7 @@
             letter-spacing: 2px;
         }
 
-        /* 🌍 區域按鈕（極簡卡片） */
+        /* 🌍 區域卡片 */
         .map {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -137,7 +72,7 @@
             line-height: 1.6;
         }
 
-        /* 🔥 側邊選單 */
+        /* 🔥 側邊選單（統一版） */
         .side-menu {
             position: fixed;
             top: 0;
@@ -153,9 +88,16 @@
 
         .side-menu.active { left: 0; }
 
+        .side-header {
+            padding: 0 30px;   /* ⭐ Menu不貼邊 */
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
         .side-menu a {
             display: block;
-            padding: 15px 25px;
+            padding: 15px 30px;   /* ⭐ 對齊 */
             text-decoration: none;
             color: black;
         }
@@ -171,6 +113,7 @@
             cursor: pointer;
         }
 
+        /* 🔳 遮罩 */
         #overlay {
             position: fixed;
             width: 100%;
@@ -217,7 +160,7 @@
 
 <body>
 
-<!-- 🔷 navbar載入 -->
+<!-- 🔷 navbar -->
 <div id="navbar"></div>
 
 <!-- 🔷 Content -->
