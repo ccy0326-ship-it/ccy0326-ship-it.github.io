@@ -12,11 +12,12 @@
             background: #f4f9f9;
         }
 
-        /* Header */
+        /* 🔷 Header（固定高度） */
         .header {
             position: fixed;
             top: 0;
             width: 100%;
+            height: 80px;
             background: white;
             border-bottom: 2px solid black;
             z-index: 1000;
@@ -25,16 +26,19 @@
         .header-inner {
             max-width: 1000px;
             margin: auto;
-            padding: 20px;
-            text-align: center;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 36px;
         }
 
-        /* Navbar */
+        /* 🔷 Navbar（固定高度） */
         .navbar {
             position: fixed;
             top: 80px;
             width: 100%;
+            height: 60px;
             background: white;
             border-bottom: 2px solid black;
             z-index: 999;
@@ -43,22 +47,23 @@
         .nav-inner {
             max-width: 1000px;
             margin: auto;
+            height: 100%;
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 60px;
-            padding: 15px 0;
         }
 
         .nav-link {
             text-decoration: none;
             color: black;
             font-size: 18px;
-            transition: 0.3s;
+            transition: color 0.3s ease;
         }
 
+        /* ⭐ 完全不影響版面 */
         .nav-link:hover {
             color: red;
-            transform: translateY(-2px);
         }
 
         .active {
@@ -66,7 +71,7 @@
             font-weight: bold;
         }
 
-        /* Content */
+        /* 🔷 Content */
         .content {
             max-width: 1000px;
             margin: 160px auto 0;
@@ -87,7 +92,7 @@
             color: white;
             border-radius: 10px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: transform 0.3s, background 0.3s;
 
             opacity: 0;
             transform: translateY(30px);
@@ -101,6 +106,7 @@
         .region:nth-child(5) { animation-delay: 0.5s; }
         .region:nth-child(6) { animation-delay: 0.6s; }
 
+        /* ⭐ 只用 translate（不影響寬度） */
         .region:hover {
             background: #21867a;
             transform: translateY(-8px);
@@ -147,10 +153,12 @@
 
 <body>
 
+<!-- Header -->
 <div class="header">
     <div class="header-inner">SG4</div>
 </div>
 
+<!-- Navbar -->
 <div class="navbar">
     <div class="nav-inner">
         <a class="nav-link" href="Final.html">Information</a>
@@ -160,6 +168,7 @@
     </div>
 </div>
 
+<!-- Content -->
 <div class="content">
 
     <h1>Click a Region</h1>
