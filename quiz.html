@@ -17,7 +17,7 @@
         .content {
             max-width: 900px;
             margin: 180px auto 50px;
-            padding: 0 20px;   /* ⭐ 修正貼邊 */
+            padding: 0 20px;
         }
 
         .title {
@@ -27,7 +27,7 @@
             letter-spacing: 2px;
         }
 
-        /* 🔥 題目 */
+        /* 🔥 題目（修正版） */
         .question {
             padding: 25px 0;
             border-bottom: 1px solid #ccc;
@@ -36,19 +36,10 @@
 
             opacity: 0;
             transform: translateX(-80px);
-            animation: slideIn 0.5s forwards;
-        }
 
-        .question:nth-child(1){animation-delay:0.1s;}
-        .question:nth-child(2){animation-delay:0.2s;}
-        .question:nth-child(3){animation-delay:0.3s;}
-        .question:nth-child(4){animation-delay:0.4s;}
-        .question:nth-child(5){animation-delay:0.5s;}
-        .question:nth-child(6){animation-delay:0.6s;}
-        .question:nth-child(7){animation-delay:0.7s;}
-        .question:nth-child(8){animation-delay:0.8s;}
-        .question:nth-child(9){animation-delay:0.9s;}
-        .question:nth-child(10){animation-delay:1s;}
+            animation: slideIn 0.5s ease forwards;
+            animation-delay: var(--delay); /* ⭐ 核心 */
+        }
 
         .question:hover {
             transform: translateX(10px);
@@ -61,7 +52,7 @@
             }
         }
 
-        /* 🔥 側邊選單（完全跟 vote 一樣） */
+        /* 🔥 側邊選單（保留你原本的） */
         .side-menu {
             position: fixed;
             top: 0;
@@ -103,7 +94,6 @@
             cursor: pointer;
         }
 
-        /* 🔳 遮罩 */
         #overlay {
             position: fixed;
             width: 100%;
@@ -133,43 +123,43 @@
 
     <div class="title">Quiz</div>
 
-    <div class="question" onclick="location.href='q1.html'">
+    <div class="question" style="--delay:0.1s" onclick="location.href='q1.html'">
         1. Which is a key goal of SDG 4?
     </div>
 
-    <div class="question" onclick="location.href='q2.html'">
+    <div class="question" style="--delay:0.2s" onclick="location.href='q2.html'">
         2. What is a barrier to education?
     </div>
 
-    <div class="question" onclick="location.href='q3.html'">
+    <div class="question" style="--delay:0.3s" onclick="location.href='q3.html'">
         3. Which group faces unequal access?
     </div>
 
-    <div class="question" onclick="location.href='q4.html'">
+    <div class="question" style="--delay:0.4s" onclick="location.href='q4.html'">
         4. What improves education quality?
     </div>
 
-    <div class="question" onclick="location.href='q5.html'">
+    <div class="question" style="--delay:0.5s" onclick="location.href='q5.html'">
         5. What does SDG 4 promote?
     </div>
 
-    <div class="question" onclick="location.href='q6.html'">
+    <div class="question" style="--delay:0.6s" onclick="location.href='q6.html'">
         6. Example of inclusive education?
     </div>
 
-    <div class="question" onclick="location.href='q7.html'">
+    <div class="question" style="--delay:0.7s" onclick="location.href='q7.html'">
         7. Why is education important?
     </div>
 
-    <div class="question" onclick="location.href='q8.html'">
+    <div class="question" style="--delay:0.8s" onclick="location.href='q8.html'">
         8. Challenge in global education?
     </div>
 
-    <div class="question" onclick="location.href='q9.html'">
+    <div class="question" style="--delay:0.9s" onclick="location.href='q9.html'">
         9. What supports equal opportunity?
     </div>
 
-    <div class="question" onclick="location.href='q10.html'">
+    <div class="question" style="--delay:1s" onclick="location.href='q10.html'">
         10. Technology in education?
     </div>
 
