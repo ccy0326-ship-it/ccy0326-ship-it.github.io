@@ -24,13 +24,13 @@
 <!-- 🔥 側邊選單 -->
 <div id="sideMenu" class="side-menu">
 
-    <!-- 上方標題 -->
+    <!-- ⭐ 上方標題（已修正留白） -->
     <div class="side-header">
-        <span>Menu</span>
+        <span class="menu-title">Menu</span>
         <span class="close-btn" onclick="closeMenu()">✖</span>
     </div>
 
-    <!-- 選單內容 -->
+    <!-- ⭐ 選單 -->
     <a href="Final.html">Home</a>
     <a href="quiz.html">Quiz</a>
     <a href="region.html">Region Info</a>
@@ -40,3 +40,148 @@
 
 <!-- 🔳 遮罩 -->
 <div id="overlay" onclick="closeMenu()"></div>
+
+<!-- 🔥 CSS（直接放在 navbar.html 或你共用CSS） -->
+<style>
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: white;
+    border-bottom: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.header-inner {
+    max-width: 1000px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 28px;
+    letter-spacing: 3px;
+}
+
+.menu-btn {
+    position: absolute;
+    left: 20px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    height: 60px;
+    background: white;
+    border-bottom: 1px solid #ccc;
+    z-index: 999;
+}
+
+.nav-inner {
+    max-width: 1000px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+/* 🔥 側邊選單 */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    padding-top: 100px;   /* ⭐ 更舒服的留白 */
+    transition: 0.3s;
+    z-index: 2000;
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+/* ⭐ 這裡解決 Menu 貼邊問題 */
+.side-header {
+    padding: 0 30px;              /* ⭐ 關鍵 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.menu-title {
+    font-size: 18px;
+}
+
+/* ⭐ 選單統一對齊 */
+.side-menu a {
+    display: block;
+    padding: 15px 30px;          /* ⭐ 跟 Menu 對齊 */
+    text-decoration: none;
+    color: black;
+}
+
+.side-menu a:hover {
+    background: #f0f0f0;
+}
+
+.close-btn {
+    cursor: pointer;
+}
+
+/* 遮罩 */
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 1500;
+}
+
+#overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+</style>
+
+<!-- 🔥 JS -->
+<script>
+function openMenu() {
+    document.getElementById("sideMenu").classList.add("active");
+    document.getElementById("overlay").classList.add("active");
+}
+
+function closeMenu() {
+    document.getElementById("sideMenu").classList.remove("active");
+    document.getElementById("overlay").classList.remove("active");
+}
+</script>
