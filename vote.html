@@ -2,29 +2,163 @@
 <html>
 <head>
     <title>Vote</title>
+
     <style>
-        body { text-align:center; font-family:Arial; background:#f4f9f9; }
-        a { display:block; margin:10px; font-size:18px; color:#2a9d8f; }
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f4f9f9;
+        }
+
+        /* 🔷 Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            font-size: 36px;
+            text-align: center;
+            border-bottom: 2px solid black;
+            z-index: 1000;
+        }
+
+        /* 🔷 Navbar */
+        .navbar {
+            position: fixed;
+            top: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 15px 0;
+            border-bottom: 2px solid black;
+            background: white;
+            z-index: 999;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            color: red;
+            transform: scale(1.2);
+        }
+
+        .active {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* 🔥 題目區 */
+        .content {
+            margin-top: 160px;
+            padding-left: 40px;
+        }
+
+        /* 🔥 題目按鈕（文字） */
+        .question {
+            display: block;
+            margin: 15px 0;
+            font-size: 20px;
+            cursor: pointer;
+            color: #264653;
+
+            opacity: 0;
+            transform: translateX(-100px);
+            animation: slideIn 0.6s forwards;
+        }
+
+        /* 🔥 延遲動畫 */
+        .question:nth-child(1) { animation-delay: 0.1s; }
+        .question:nth-child(2) { animation-delay: 0.2s; }
+        .question:nth-child(3) { animation-delay: 0.3s; }
+        .question:nth-child(4) { animation-delay: 0.4s; }
+        .question:nth-child(5) { animation-delay: 0.5s; }
+        .question:nth-child(6) { animation-delay: 0.6s; }
+        .question:nth-child(7) { animation-delay: 0.7s; }
+        .question:nth-child(8) { animation-delay: 0.8s; }
+        .question:nth-child(9) { animation-delay: 0.9s; }
+        .question:nth-child(10){ animation-delay: 1s; }
+
+        /* 🔥 hover效果 */
+        .question:hover {
+            color: red;
+            transform: translateX(10px) scale(1.1);
+        }
+
+        /* 🔥 動畫 */
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
     </style>
 </head>
 
 <body>
 
-<h1>Choose a Question</h1>
+<!-- 🔥 固定 Header -->
+<div class="header">SG4</div>
 
-<a href="q1.html">1. Biggest problem in education?</a>
-<a href="q2.html">2. Most important factor?</a>
-<a href="q3.html">3. Who faces most difficulty?</a>
-<a href="q4.html">4. Best solution?</a>
-<a href="q5.html">5. Biggest barrier?</a>
-<a href="q6.html">6. What helps learning?</a>
-<a href="q7.html">7. Government focus?</a>
-<a href="q8.html">8. Role of technology?</a>
-<a href="q9.html">9. Best learning type?</a>
-<a href="q10.html">10. Why is education important?</a>
+<!-- 🔥 固定 Navbar -->
+<div class="navbar">
+    <a class="nav-link" href="Final.html">Information</a>
+    <a class="nav-link" href="quiz.html">Quiz</a>
+    <a class="nav-link" href="region.html">Region Info</a>
+    <a class="nav-link active" href="vote.html">Vote</a>
+</div>
 
-<!-- 返回主頁 -->
-<a href="Final.html">⬅Back</a>
+<!-- 🔥 題目列表 -->
+<div class="content">
+
+    <div class="question" onclick="location.href='q1.html'">
+        1. Biggest problem in education?
+    </div>
+
+    <div class="question" onclick="location.href='q2.html'">
+        2. Most important factor?
+    </div>
+
+    <div class="question" onclick="location.href='q3.html'">
+        3. Who faces most difficulty?
+    </div>
+
+    <div class="question" onclick="location.href='q4.html'">
+        4. Best solution?
+    </div>
+
+    <div class="question" onclick="location.href='q5.html'">
+        5. Biggest barrier?
+    </div>
+
+    <div class="question" onclick="location.href='q6.html'">
+        6. What helps learning?
+    </div>
+
+    <div class="question" onclick="location.href='q7.html'">
+        7. Government focus?
+    </div>
+
+    <div class="question" onclick="location.href='q8.html'">
+        8. Role of technology?
+    </div>
+
+    <div class="question" onclick="location.href='q9.html'">
+        9. Best learning type?
+    </div>
+
+    <div class="question" onclick="location.href='q10.html'">
+        10. Why is education important?
+    </div>
+
+</div>
 
 </body>
 </html>
