@@ -12,7 +12,7 @@
             background: #f4f9f9;
         }
 
-        /* 🔷 Header（固定高度） */
+        /* 🔷 Header */
         .header {
             position: fixed;
             top: 0;
@@ -30,10 +30,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
             font-size: 36px;
         }
 
-        /* 🔷 Navbar（固定高度） */
+        /* ☰ 按鈕 */
+        .menu-btn {
+            position: absolute;
+            left: 20px;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* 🔷 Navbar */
         .navbar {
             position: fixed;
             top: 80px;
@@ -61,10 +70,7 @@
             transition: color 0.3s ease;
         }
 
-        /* ⭐ 完全不影響版面 */
-        .nav-link:hover {
-            color: red;
-        }
+        .nav-link:hover { color: red; }
 
         .active {
             color: red;
@@ -78,7 +84,7 @@
             text-align: center;
         }
 
-        /* 🌍 地圖區 */
+        /* 🌍 地圖 */
         .map {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -106,7 +112,6 @@
         .region:nth-child(5) { animation-delay: 0.5s; }
         .region:nth-child(6) { animation-delay: 0.6s; }
 
-        /* ⭐ 只用 translate（不影響寬度） */
         .region:hover {
             background: #21867a;
             transform: translateY(-8px);
@@ -123,6 +128,58 @@
             margin-top: 30px;
             font-size: 18px;
         }
+
+        /* 🔥 側邊選單 */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -260px;
+            width: 260px;
+            height: 100%;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+            padding-top: 80px;
+            transition: 0.3s;
+            z-index: 2000;
+        }
+
+        .side-menu a {
+            display: block;
+            padding: 15px 25px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .side-menu a:hover {
+            background: #f0f0f0;
+            color: red;
+        }
+
+        .side-menu.active { left: 0; }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        #overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            z-index: 1500;
+        }
+
+        #overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
     </style>
 
     <script>
@@ -148,6 +205,16 @@
                 text.innerHTML = "Oceania: Remote education challenges.";
             }
         }
+
+        function openMenu() {
+            document.getElementById("sideMenu").classList.add("active");
+            document.getElementById("overlay").classList.add("active");
+        }
+
+        function closeMenu() {
+            document.getElementById("sideMenu").classList.remove("active");
+            document.getElementById("overlay").classList.remove("active");
+        }
     </script>
 </head>
 
@@ -155,7 +222,10 @@
 
 <!-- Header -->
 <div class="header">
-    <div class="header-inner">SG4</div>
+    <div class="header-inner">
+        <div class="menu-btn" onclick="openMenu()">☰</div>
+        SG4
+    </div>
 </div>
 
 <!-- Navbar -->
@@ -167,6 +237,17 @@
         <a class="nav-link" href="vote.html">Vote</a>
     </div>
 </div>
+
+<!-- 側邊選單 -->
+<div id="sideMenu" class="side-menu">
+    <div class="close-btn" onclick="closeMenu()">✖</div>
+    <a href="Final.html">Information</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="region.html">Region Info</a>
+    <a href="vote.html">Vote</a>
+</div>
+
+<div id="overlay" onclick="closeMenu()"></div>
 
 <!-- Content -->
 <div class="content">
