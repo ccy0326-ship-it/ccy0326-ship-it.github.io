@@ -4,7 +4,6 @@
     <title>Quiz</title>
 
     <style>
-        /* ⭐ 防止左右跳動 */
         html {
             overflow-y: scroll;
         }
@@ -15,11 +14,12 @@
             background: #f4f9f9;
         }
 
-        /* 🔷 Header */
+        /* 🔷 Header（固定高度） */
         .header {
             position: fixed;
             top: 0;
             width: 100%;
+            height: 80px; /* ⭐ 固定高度 */
             background: white;
             border-bottom: 2px solid black;
             z-index: 1000;
@@ -28,16 +28,19 @@
         .header-inner {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
-            text-align: center;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 36px;
         }
 
-        /* 🔷 Navbar */
+        /* 🔷 Navbar（固定高度） */
         .navbar {
             position: fixed;
             top: 80px;
             width: 100%;
+            height: 60px; /* ⭐ 固定高度 */
             background: white;
             border-bottom: 2px solid black;
             z-index: 999;
@@ -46,10 +49,11 @@
         .nav-inner {
             max-width: 1000px;
             margin: 0 auto;
+            height: 100%;
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 60px;
-            padding: 15px 0;
         }
 
         .nav-link {
@@ -57,13 +61,12 @@
             color: black;
             font-size: 18px;
             display: inline-block;
-            transition: 0.3s;
+            transition: color 0.3s ease;
         }
 
-        /* ⭐ 改掉scale（避免晃） */
+        /* ⭐ 完全不影響寬度 */
         .nav-link:hover {
             color: red;
-            transform: translateY(-2px);
         }
 
         .active {
@@ -71,7 +74,7 @@
             font-weight: bold;
         }
 
-        /* 🔷 內容區 */
+        /* 🔷 Content */
         .content {
             max-width: 1000px;
             margin: 160px auto 0 auto;
@@ -91,7 +94,6 @@
             animation: slideIn 0.6s forwards;
         }
 
-        /* 延遲動畫 */
         .question:nth-child(1) { animation-delay: 0.1s; }
         .question:nth-child(2) { animation-delay: 0.2s; }
         .question:nth-child(3) { animation-delay: 0.3s; }
@@ -103,13 +105,11 @@
         .question:nth-child(9) { animation-delay: 0.9s; }
         .question:nth-child(10){ animation-delay: 1s; }
 
-        /* hover效果（不影響版面） */
         .question:hover {
             color: red;
             transform: translateX(10px);
         }
 
-        /* 動畫 */
         @keyframes slideIn {
             to {
                 opacity: 1;
@@ -121,12 +121,10 @@
 
 <body>
 
-<!-- Header -->
 <div class="header">
     <div class="header-inner">SG4</div>
 </div>
 
-<!-- Navbar -->
 <div class="navbar">
     <div class="nav-inner">
         <a class="nav-link" href="Final.html">Information</a>
@@ -136,7 +134,6 @@
     </div>
 </div>
 
-<!-- Content -->
 <div class="content">
 
     <div class="question" onclick="location.href='q1.html'">
