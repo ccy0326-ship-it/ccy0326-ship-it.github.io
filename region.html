@@ -5,21 +5,63 @@
 
     <style>
         body {
-            text-align: center;
+            margin: 0;
             font-family: Arial;
             background: #f4f9f9;
         }
 
-        h1 {
-            margin-top: 30px;
-            color: #264653;
+        /* 🔷 Header（固定） */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            font-size: 36px;
+            text-align: center;
+            border-bottom: 2px solid black;
+            z-index: 1000;
         }
 
-        /* 按鈕區排版 */
-        .button-container {
-            margin-top: 20px;
+        /* 🔷 Navbar（固定） */
+        .navbar {
+            position: fixed;
+            top: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 15px 0;
+            border-bottom: 2px solid black;
+            background: white;
+            z-index: 999;
         }
 
+        .nav-link {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            color: red;
+            transform: scale(1.2);
+        }
+
+        .active {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* 🔷 內容區（關鍵） */
+        .content {
+            margin-top: 160px;
+            text-align: center;
+        }
+
+        /* 🔷 按鈕 */
         .btn {
             margin: 10px;
             padding: 12px 18px;
@@ -28,24 +70,18 @@
             color: white;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
             transition: 0.3s;
         }
 
         .btn:hover {
             background-color: #21867a;
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         #info {
             margin-top: 25px;
             font-size: 18px;
             color: #333;
-        }
-
-        a {
-            display: block;
-            margin-top: 30px;
         }
     </style>
 
@@ -77,20 +113,32 @@
 
 <body>
 
-<h1>Choose a Continent</h1>
+<!-- 🔥 固定 Header -->
+<div class="header">SG4</div>
 
-<div class="button-container">
+<!-- 🔥 固定 Navbar -->
+<div class="navbar">
+    <a class="nav-link" href="Final.html">Information</a>
+    <a class="nav-link" href="quiz.html">Quiz</a>
+    <a class="nav-link active" href="region.html">Region Info</a>
+    <a class="nav-link" href="vote.html">Vote</a>
+</div>
+
+<!-- 🔷 內容 -->
+<div class="content">
+
+    <h1>Choose a Continent</h1>
+
     <button class="btn" onclick="showInfo('north_america')">North America</button>
     <button class="btn" onclick="showInfo('south_america')">South America</button>
     <button class="btn" onclick="showInfo('europe')">Europe</button>
     <button class="btn" onclick="showInfo('africa')">Africa</button>
     <button class="btn" onclick="showInfo('asia')">Asia</button>
     <button class="btn" onclick="showInfo('oceania')">Oceania</button>
+
+    <p id="info">Click a continent to see education information</p>
+
 </div>
-
-<p id="info">Click a continent to see education information</p>
-
-<a href="Final.html">⬅ Back to Home</a>
 
 </body>
 </html>
