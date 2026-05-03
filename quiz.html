@@ -7,25 +7,34 @@
         body {
             margin: 0;
             font-family: Arial;
-            text-align: center;
             background: #f4f9f9;
         }
 
         /* 🔷 Header */
         .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
             padding: 20px;
             font-size: 36px;
+            text-align: center;
             border-bottom: 2px solid black;
+            z-index: 1000;
         }
 
         /* 🔷 Navbar */
         .navbar {
+            position: fixed;
+            top: 80px;
+            width: 100%;
             display: flex;
             justify-content: center;
             gap: 60px;
             padding: 15px 0;
             border-bottom: 2px solid black;
             background: white;
+            z-index: 999;
         }
 
         .nav-link {
@@ -46,36 +55,60 @@
             font-weight: bold;
         }
 
-        /* 🔷 Quiz內容 */
+        /* 🔥 題目區 */
         .content {
-            margin-top: 40px;
+            margin-top: 160px;
+            padding-left: 40px;
         }
 
-        button {
-            margin: 10px;
-            padding: 10px 20px;
+        /* 🔥 題目按鈕 */
+        .question {
+            display: block;
+            margin: 15px 0;
+            font-size: 20px;
             cursor: pointer;
+            color: #264653;
+
+            /* ⭐ 初始在左外 */
+            opacity: 0;
+            transform: translateX(-100px);
+            animation: slideIn 0.6s forwards;
         }
-    </style>
 
-    <script>
-        function checkAnswer(answer) {
-            let result = document.getElementById("result");
+        /* ⭐ 每個題目延遲出現（更高級） */
+        .question:nth-child(1) { animation-delay: 0.1s; }
+        .question:nth-child(2) { animation-delay: 0.2s; }
+        .question:nth-child(3) { animation-delay: 0.3s; }
+        .question:nth-child(4) { animation-delay: 0.4s; }
+        .question:nth-child(5) { animation-delay: 0.5s; }
+        .question:nth-child(6) { animation-delay: 0.6s; }
+        .question:nth-child(7) { animation-delay: 0.7s; }
+        .question:nth-child(8) { animation-delay: 0.8s; }
+        .question:nth-child(9) { animation-delay: 0.9s; }
+        .question:nth-child(10){ animation-delay: 1s; }
 
-            if (answer === "correct") {
-                result.innerHTML = "✅ Correct!";
-            } else {
-                result.innerHTML = "❌ Wrong!";
+        /* 🔥 hover效果 */
+        .question:hover {
+            color: red;
+            transform: translateX(10px) scale(1.1);
+        }
+
+        /* 🔥 動畫 */
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
             }
         }
-    </script>
+    </style>
 </head>
 
 <body>
 
-<!-- 🔥 Navbar（固定） -->
+<!-- Header -->
 <div class="header">SG4</div>
 
+<!-- Navbar -->
 <div class="navbar">
     <a class="nav-link" href="Final.html">Information</a>
     <a class="nav-link active" href="quiz.html">Quiz</a>
@@ -83,17 +116,48 @@
     <a class="nav-link" href="vote.html">Vote</a>
 </div>
 
-<!-- 🔷 內容 -->
+<!-- 🔥 題目列表 -->
 <div class="content">
 
-<h1>Education Quiz</h1>
-<p>Which is a major issue in global education?</p>
+    <div class="question" onclick="location.href='q1.html'">
+        1. Which is a key goal of SDG 4?
+    </div>
 
-<button onclick="checkAnswer('wrong')">Good internet</button>
-<button onclick="checkAnswer('correct')">Lack of resources</button>
-<button onclick="checkAnswer('wrong')">Too many schools</button>
+    <div class="question" onclick="location.href='q2.html'">
+        2. What is a barrier to education?
+    </div>
 
-<p id="result"></p>
+    <div class="question" onclick="location.href='q3.html'">
+        3. Which group faces unequal access?
+    </div>
+
+    <div class="question" onclick="location.href='q4.html'">
+        4. What improves education quality?
+    </div>
+
+    <div class="question" onclick="location.href='q5.html'">
+        5. What does SDG 4 promote?
+    </div>
+
+    <div class="question" onclick="location.href='q6.html'">
+        6. Example of inclusive education?
+    </div>
+
+    <div class="question" onclick="location.href='q7.html'">
+        7. Why is education important?
+    </div>
+
+    <div class="question" onclick="location.href='q8.html'">
+        8. Challenge in global education?
+    </div>
+
+    <div class="question" onclick="location.href='q9.html'">
+        9. What supports equal opportunity?
+    </div>
+
+    <div class="question" onclick="location.href='q10.html'">
+        10. Technology in education?
+    </div>
 
 </div>
 
