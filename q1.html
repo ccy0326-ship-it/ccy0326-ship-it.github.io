@@ -3,33 +3,79 @@
 <head>
     <title>Vote Q1</title>
 
+    <!-- ⭐ 共用 navbar CSS -->
+    <link rel="stylesheet" href="navbar.css">
+
     <style>
-        body { 
-            text-align:center; 
-            font-family:Arial; 
-            background:#f4f9f9; 
+        html { overflow-y: scroll; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
         }
 
-        .option {
-            display:block;
-            margin:10px auto;
-            padding:12px;
-            width:250px;
-            background:#2a9d8f;
-            color:white;
-            border-radius:8px;
-            cursor:pointer;
-            transition:0.3s;
+        /* 🔷 這頁自己的內容 */
+        .content {
+            max-width: 900px;
+            margin: 180px auto 50px;
+            padding: 0 20px;
+            text-align: center;
         }
+
+        .title {
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        /* 🔥 選項 */
+        .option {
+            padding: 20px 0;
+            border-bottom: 1px solid #ccc;
+            font-size: 18px;
+            cursor: pointer;
+
+            opacity: 0;
+            transform: translateX(-60px);
+            animation: slideIn 0.4s forwards;
+        }
+
+        .option:nth-child(2){animation-delay:0.1s;}
+        .option:nth-child(3){animation-delay:0.2s;}
+        .option:nth-child(4){animation-delay:0.3s;}
 
         .option:hover {
-            background:#21867a;
+            transform: translateX(10px);
         }
 
-        #result {
-            margin-top:20px;
-            font-size:18px;
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
+
+        /* 🔷 結果 */
+        #result {
+            margin-top: 40px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* 🔙 返回 */
+        .back {
+            display: inline-block;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            color: black;
+        }
+
     </style>
 
     <script>
@@ -55,7 +101,7 @@
             document.getElementById("result").innerHTML =
                 "Poverty: " + votes.a + " (" + a + "%)<br>" +
                 "Resources: " + votes.b + " (" + b + "%)<br>" +
-                "Gender: " + votes.c + " (" + c + "%)";
+                "Gender inequality: " + votes.c + " (" + c + "%)";
         }
 
         window.onload = showResult;
@@ -64,16 +110,42 @@
 
 <body>
 
-<h1>What is the biggest problem in global education?</h1>
+<!-- 🔷 共用 navbar -->
+<div id="navbar"></div>
 
-<div class="option" onclick="vote('a')">Poverty</div>
-<div class="option" onclick="vote('b')">Lack of resources</div>
-<div class="option" onclick="vote('c')">Gender inequality</div>
+<!-- 🔷 Content -->
+<div class="content">
 
-<div id="result"></div>
+    <div class="title">What is the biggest problem in global education?</div>
 
-<br>
-<a href="vote.html">⬅ Back</a>
+    <div class="option" onclick="vote('a')">Poverty</div>
+    <div class="option" onclick="vote('b')">Lack of resources</div>
+    <div class="option" onclick="vote('c')">Gender inequality</div>
+
+    <div id="result"></div>
+
+    <a class="back" href="vote.html">← Back</a>
+
+</div>
+
+<!-- 🔷 JS（共用 navbar） -->
+<script>
+fetch("navbar.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("navbar").innerHTML = data;
+});
+
+function openMenu() {
+    document.getElementById("sideMenu").classList.add("active");
+    document.getElementById("overlay").classList.add("active");
+}
+
+function closeMenu() {
+    document.getElementById("sideMenu").classList.remove("active");
+    document.getElementById("overlay").classList.remove("active");
+}
+</script>
 
 </body>
 </html>
