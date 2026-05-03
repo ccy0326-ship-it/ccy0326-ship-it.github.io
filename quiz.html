@@ -2,13 +2,66 @@
 <html>
 <head>
     <title>Quiz</title>
+
     <style>
-        body { text-align:center; font-family:Arial; background:#f4f9f9; }
-        button { margin:10px; padding:10px 20px; cursor:pointer; }
+        body {
+            margin: 0;
+            font-family: Arial;
+            text-align: center;
+            background: #f4f9f9;
+        }
+
+        /* 🔷 Header */
+        .header {
+            padding: 20px;
+            font-size: 36px;
+            border-bottom: 2px solid black;
+        }
+
+        /* 🔷 Navbar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 15px 0;
+            border-bottom: 2px solid black;
+            background: white;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            color: red;
+            transform: scale(1.2);
+        }
+
+        .active {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* 🔷 Quiz內容 */
+        .content {
+            margin-top: 40px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
     </style>
+
     <script>
         function checkAnswer(answer) {
             let result = document.getElementById("result");
+
             if (answer === "correct") {
                 result.innerHTML = "✅ Correct!";
             } else {
@@ -20,6 +73,19 @@
 
 <body>
 
+<!-- 🔥 Navbar（固定） -->
+<div class="header">SG4</div>
+
+<div class="navbar">
+    <a class="nav-link" href="Final.html">Information</a>
+    <a class="nav-link active" href="quiz.html">Quiz</a>
+    <a class="nav-link" href="region.html">Region Info</a>
+    <a class="nav-link" href="vote.html">Vote</a>
+</div>
+
+<!-- 🔷 內容 -->
+<div class="content">
+
 <h1>Education Quiz</h1>
 <p>Which is a major issue in global education?</p>
 
@@ -29,8 +95,7 @@
 
 <p id="result"></p>
 
-<br>
-<a href="Final.html">⬅ Back</a>
+</div>
 
 </body>
 </html>
