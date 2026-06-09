@@ -39,7 +39,7 @@ One challenge was designing a relational database schema that could support mult
 
 ### A4. Estimated contribution percentage
 
-My estimated contribution: **40%**
+My estimated contribution: **35%**
 
 ---
 
@@ -72,7 +72,7 @@ Yes. Their work matched the agreed allocation and they successfully completed th
 
 #### Estimated contribution percentage for this teammate
 
-My estimate of their contribution: **30%**
+My estimate of their contribution: **35%**
 
 ---
 
@@ -99,7 +99,7 @@ Yes. Their work matched the agreed allocation and all graph database tasks were 
 | Quality of their work was satisfactory              | 5            | The graph database implementation functioned correctly and supported the required route-planning features. |
 | Communicated well and kept the team informed        | 4            | Maintained communication during development and integration.                                               |
 | Met deadlines agreed within the team                | 5            | Completed assigned work within the agreed timeline.                                                        |
-| **Overall rating for this teammate**                | **5**        | Successfully delivered the graph database component and contributed positively to the project.             |
+| **Overall rating for this teammate**                | **4**        | Successfully delivered the graph database component and contributed positively to the project.             |
 
 #### Estimated contribution percentage for this teammate
 
@@ -111,8 +111,8 @@ My estimate of their contribution: **30%**
 
 | Member         | Your estimated % | Notes                                                                              |
 | -------------- | ---------------- | ---------------------------------------------------------------------------------- |
-| Yourself (欉家誼) | 40%              | Relational database design, PostgreSQL queries, seeding, ER diagram, normalisation |
-| 戴睿真            | 30%              | Vector database, RAG implementation, integration support                           |
+| Yourself (欉家誼) | 35%              | Relational database design, PostgreSQL queries, seeding, ER diagram, normalisation |
+| 戴睿真            | 35%              | Vector database, RAG implementation, integration support                           |
 | 蕭彤恩            | 30%              | Neo4j graph database design, seeding, and query implementation                     |
 | **Total**      | **100%**         |                                                                                    |
 
