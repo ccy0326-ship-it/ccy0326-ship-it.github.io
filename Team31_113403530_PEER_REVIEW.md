@@ -95,7 +95,7 @@ Yes. Their work matched the agreed allocation and all graph database tasks were 
 
 | Criterion                                           | Rating (1–5) | Justification (1–2 sentences)                                                                              |
 | --------------------------------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------- |
-| Delivered the tasks assigned in the work allocation | 5            | Completed all assigned Neo4j tasks.                                                                        |
+| Delivered the tasks assigned in the work allocation | 4            | Completed all assigned Neo4j tasks.                                                                        |
 | Quality of their work was satisfactory              | 5            | The graph database implementation functioned correctly and supported the required route-planning features. |
 | Communicated well and kept the team informed        | 4            | Maintained communication during development and integration.                                               |
 | Met deadlines agreed within the team                | 5            | Completed assigned work within the agreed timeline.                                                        |
