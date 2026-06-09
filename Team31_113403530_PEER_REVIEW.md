@@ -30,10 +30,10 @@ One challenge was designing a relational database schema that could support mult
 | Criterion                                                   | Rating (1–5) | Justification (1–2 sentences)                                                                                           |
 | ----------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------- |
 | I delivered the tasks assigned to me in the work allocation | 5            | I completed all relational database tasks and documentation sections assigned to me.                                    |
-| The quality of my work was satisfactory                     | 5            | The database schema and query functions met the project requirements and integrated successfully with other components. |
+| The quality of my work was satisfactory                     | 4            | The database schema and query functions met the project requirements and integrated successfully with other components. |
 | I communicated well and kept the team informed              | 4            | I regularly communicated progress and coordinated integration work with teammates.                                      |
 | I met deadlines agreed within the team                      | 5            | All assigned tasks were completed within the agreed schedule.                                                           |
-| **Overall self-rating**                                     | **5**        | I completed my assigned responsibilities successfully and contributed significantly to the project.                     |
+| **Overall self-rating**                                     | **4**        | I completed my assigned responsibilities successfully and contributed significantly to the project.                     |
 
 ---
 
