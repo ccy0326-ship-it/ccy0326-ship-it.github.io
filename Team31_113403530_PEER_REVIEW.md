@@ -65,7 +65,7 @@ Yes. Their work matched the agreed allocation and they successfully completed th
 | Criterion                                           | Rating (1–5) | Justification (1–2 sentences)                                                                 |
 | --------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------- |
 | Delivered the tasks assigned in the work allocation | 5            | All assigned vector database and RAG tasks were completed.                                    |
-| Quality of their work was satisfactory              | 5            | The implemented functionality worked as intended and integrated well with the overall system. |
+| Quality of their work was satisfactory              | 4            | The implemented functionality worked as intended and integrated well with the overall system. |
 | Communicated well and kept the team informed        | 4            | Communication was consistent throughout the project.                                          |
 | Met deadlines agreed within the team                | 5            | Assigned tasks were completed on schedule.                                                    |
 | **Overall rating for this teammate**                | **4**        | Delivered high-quality work and contributed effectively to the project.                       |
